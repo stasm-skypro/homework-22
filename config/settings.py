@@ -6,16 +6,20 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 from django.conf.global_settings import STATICFILES_DIRS
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*fxzji$ijku4#u3^5zf9iam0-_2&tilvl(+-p5)6c-_ey%s&&e'
+# SECRET_KEY = 'django-insecure-*fxzji$ijku4#u3^5zf9iam0-_2&tilvl(+-p5)6c-_ey%s&&e'
 # SECURITY WARNING: don't run with debug turned on in production!
+load_dotenv()
+SECRET_KEY = os.getenv("SECRET_KEY1")
+
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]

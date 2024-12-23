@@ -11,6 +11,8 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+from django.conf.global_settings import STATICFILES_DIRS
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
